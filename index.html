@@ -1,1 +1,51 @@
-:-)
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <title>cfsen</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+  <script src="controller.js"> </script>
+    <div class="container">
+      <div class="header">
+        <div class="navigation">
+          <div
+            hx-get="content/home.html"
+            hx-target="#content"
+            hx-swap="innerHTML">
+            home
+          </div>
+          <div
+            hx-get="content/projects.html"
+            hx-target="#content"
+            hx-swap="innerHTML">
+            projects
+          </div>
+          <div
+            hx-get="content/contact.html"
+            hx-target="#content"
+            hx-swap="innerHTML">
+            contact
+          </div>
+        </div>
+        <div class="cfsen">
+          <span>
+            <span class="blue">cf</span><span class="green">sen</span>
+          </span>
+        </div>
+      </div>
+      <div class="main" id="content"
+        hx-get="content/home.html"
+        hx-trigger="load"
+        hx-swap="innerHTML"
+      >
+
+      </div>
+      <div class="footer">Updated Apr. '25.</div>
+    </div>
+  </body>
+</html>
